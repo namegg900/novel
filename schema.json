@@ -1,0 +1,32 @@
+{
+  "$schema": "https://json-schema.org/draft/2020-12/schema",
+  "title": "NovelScrapeResult",
+  "type": "object",
+  "required": ["title", "author", "chapters"],
+  "properties": {
+    "title": { "type": "string" },
+    "author": { "type": "string" },
+    "cover": { "type": "string" },
+    "description": { "type": "string" },
+    "genres": {
+      "type": "array",
+      "items": { "type": "string" }
+    },
+    "chapters": {
+      "type": "array",
+      "items": {
+        "type": "object",
+        "required": ["id", "title", "content"],
+        "properties": {
+          "id": { "type": "string" },
+          "title": { "type": "string" },
+          "publishedAt": { "type": "string" },
+          "content": {
+            "type": "array",
+            "items": { "type": "string" }
+          }
+        }
+      }
+    }
+  }
+}
